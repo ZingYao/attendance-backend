@@ -5,7 +5,6 @@ import (
 	_ "attendance_service/src/config"
 	"attendance_service/src/log"
 	"fmt"
-	"github.com/kataras/iris/v12"
 	"io"
 	"os"
 	"time"
