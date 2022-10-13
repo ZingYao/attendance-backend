@@ -1,0 +1,21 @@
+App:
+  Addr: :8000
+  Name: 签到考勤系统
+  Timeout: 10000
+
+Log:
+  Level: debug #disable fatal error warn info debug
+  Output: file #file console
+  FilePath: ./log
+
+Database:
+  PostgreSql:
+    Host: localhost
+    Port: 5432
+    User: attendance
+    Pass: localpass
+    DB: attendance
+  Redis:
+    Host: 6
+    Port: 7
+    Pass: 8
