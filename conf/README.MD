@@ -4,6 +4,8 @@ App:
   Addr: :8000   # 监听地址
   Name: 签到考勤系统 # 系统名
   Timeout: 10000 # 接口超时时间 单位 毫秒
+  Qps: 5 # 接口qps限制
+  MaxPostMemory: 16 # post数据最大大小单位 MB
 
 Log:
   Level: debug # disable fatal error warn info debug

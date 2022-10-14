@@ -2,9 +2,11 @@ package entities
 
 type (
 	AppStruct struct {
-		Addr    string `yaml:"Addr"`
-		Name    string `yaml:"Name"`
-		Timeout int    `yaml:"Timeout"`
+		Addr          string `yaml:"Addr"`
+		Name          string `yaml:"Name"`
+		Timeout       int    `yaml:"Timeout"`
+		Qps           int    `yaml:"Qps"`
+		MaxPostMemory int64  `yaml:"MaxPostMemory"`
 	}
 	LogStruct struct {
 		Level    string `yaml:"Level"`
@@ -12,11 +14,12 @@ type (
 		FilePath string `yaml:"FilePath"`
 	}
 	PostgreSqlStruct struct {
-		Host string `yaml:"Host"`
-		Port int    `yaml:"Port"`
-		User string `yaml:"User"`
-		Pass string `yaml:"Pass"`
-		DB   string `yaml:"DB"`
+		Host     string `yaml:"Host"`
+		Port     int    `yaml:"Port"`
+		User     string `yaml:"User"`
+		Pass     string `yaml:"Pass"`
+		DB       string `yaml:"DB"`
+		TimeZone string `yaml:"TimeZone"`
 	}
 	RedisStruct struct {
 		Host string `yaml:"Host"`

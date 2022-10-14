@@ -1,9 +1,10 @@
 package config
 
 import (
-	"attendance_service/src/entities"
+	"attendance_backend/src/entities"
 	"flag"
 	"fmt"
+	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"os"
 )

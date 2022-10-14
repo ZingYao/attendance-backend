@@ -1,5 +1,5 @@
 create user attendance;
-ALTER USER attendance WITH PASSWORD 'localtest';
+ALTER USER attendance WITH PASSWORD 'localpass';
 comment on role attendance is '考勤数据库管理员';
 
 create database attendance
