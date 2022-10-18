@@ -51,7 +51,6 @@ func main() {
 	//api初始化
 	api := app.Party("/api", middlewares.IpInterceptor, middlewares.ErrorBefore)
 	router.Register(api)
-	api.Done(middlewares.ErrorAfter)
 	err = app.Listen(
 		conf.App.Addr, //绑定地址
 		//iris.WithTimeout(time.Duration(conf.App.Timeout)*time.Millisecond), //指定超时时间

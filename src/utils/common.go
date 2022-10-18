@@ -19,9 +19,18 @@ func ReturnJson(ctx iris.Context, ret int, msg string, data ...interface{}) {
 	}
 }
 
-func SetError(ctx iris.Context, ret int, msg string, err error) {
-	ctx.Values().Set(constant.ErrorCode, ret)
-	ctx.Values().Set(constant.ErrorMsg, msg)
+func ReturnErrJson(ctx iris.Context, ret int, msg string) {
+	errorListInterface := ctx.Values().Get(constant.ErrorList)
+	errorList := errorListInterface.([]error)
+	var data []string
+	for _, err := range errorList {
+		data = append(data, err.Error())
+	}
+	ReturnJson(ctx, ret, msg, data)
+}
+
+func SetError(ctx iris.Context, err error) {
 	errList := ctx.Values().Get(constant.ErrorList)
 	errList = append(errList.([]error), err)
+	ctx.Values().Set(constant.ErrorList, errList)
 }

@@ -12,5 +12,6 @@ func Register(api iris.Party) {
 		repo := postgre_sql.GetRepository()
 		indexController := v1.GetIndexController(repo)
 		api.Get("/", indexController.Index)
+		api.Get("/err", indexController.Error)
 	}
 }
